@@ -1,4 +1,4 @@
-﻿import Image from "next/image";
+import Image from "next/image";
 import Link from "next/link";
 import { ShieldCheck, HeartHandshake, CheckCircle2, ArrowRight, Award, Zap } from "lucide-react";
 
@@ -15,10 +15,10 @@ export default function RadicalTransparency() {
             <div className="lg:col-span-5 relative">
               <div className="relative rounded-2xl overflow-hidden border-2 border-cyan-500/30 aspect-[4/5] shadow-xl shadow-[#00e5ff]/10 group">
                 <Image
-                  src="/richard-car-planb.png"
+                  src="/richard-standing-car.jpg"
                   alt="Richard Veintimilla - Founder Club de Traders"
                   fill
-                  className="object-cover object-center group-hover:scale-105 transition-transform duration-700"
+                  className="object-cover object-top group-hover:scale-105 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent" />
                 
