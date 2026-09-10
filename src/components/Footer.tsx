@@ -30,6 +30,14 @@ export default function Footer() {
             Web Oficial
           </a>
           <a
+            href={`https://wa.me/${EVENT_CONFIG.whatsappDirect}?text=${encodeURIComponent("¡Hola Richard! Me gustaría información sobre el Bootcamp de ClubTraders.")}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-[#00e5ff] transition-colors"
+          >
+            WhatsApp ({EVENT_CONFIG.whatsappDisplay})
+          </a>
+          <a
             href={`mailto:${EVENT_CONFIG.academia.email}`}
             className="hover:text-[#00e5ff] transition-colors"
           >

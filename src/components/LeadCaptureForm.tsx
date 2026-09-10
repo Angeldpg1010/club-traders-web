@@ -31,13 +31,22 @@ export default function LeadCaptureForm() {
       console.error(err);
     }
 
+    const getWhatsAppTarget = () => {
+      if (EVENT_CONFIG.whatsappGroupUrl && !EVENT_CONFIG.whatsappGroupUrl.includes("clubtraders-bootcamp")) {
+        return EVENT_CONFIG.whatsappGroupUrl;
+      }
+      return `https://wa.me/${EVENT_CONFIG.whatsappDirect}?text=${encodeURIComponent(
+        `¡Hola Richard! Acabo de registrarme en la web al Bootcamp de ClubTraders. Mi nombre es ${formData.nombre} (${formData.email}). ¿Me pasas el enlace de acceso al grupo oficial de Zoom y WhatsApp?`
+      )}`;
+    };
+
     setTimeout(() => {
       setLoading(false);
       setSubmitted(true);
 
-      // Redirigir al grupo de WhatsApp
-      if (EVENT_CONFIG.whatsappGroupUrl) {
-        window.open(EVENT_CONFIG.whatsappGroupUrl, "_blank");
+      const targetUrl = getWhatsAppTarget();
+      if (targetUrl) {
+        window.open(targetUrl, "_blank");
       }
     }, 600);
   };
@@ -165,13 +174,19 @@ export default function LeadCaptureForm() {
               </p>
 
               <a
-                href={EVENT_CONFIG.whatsappGroupUrl}
+                href={
+                  EVENT_CONFIG.whatsappGroupUrl && !EVENT_CONFIG.whatsappGroupUrl.includes("clubtraders-bootcamp")
+                    ? EVENT_CONFIG.whatsappGroupUrl
+                    : `https://wa.me/${EVENT_CONFIG.whatsappDirect}?text=${encodeURIComponent(
+                        `¡Hola Richard! Acabo de registrarme en la web al Bootcamp de ClubTraders. Mi nombre es ${formData.nombre} (${formData.email}). ¿Me pasas el enlace de acceso al grupo oficial de Zoom y WhatsApp?`
+                      )}`
+                }
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-3 px-8 py-4 rounded-full text-base font-black bg-[#25d366] hover:bg-[#20ba5a] text-white shadow-xl shadow-emerald-600/30 active:scale-95 transition-all mb-4"
               >
                 <MessageSquare className="w-5 h-5 fill-current" />
-                <span>ABRIR GRUPO DE WHATSAPP AHORA</span>
+                <span>ABRIR WHATSAPP AHORA</span>
               </a>
 
               <p className="text-xs text-slate-400">

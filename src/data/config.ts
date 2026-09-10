@@ -10,7 +10,8 @@ export const EVENT_CONFIG = {
   
   // Enlaces de conversión
   whatsappGroupUrl: "https://chat.whatsapp.com/invite/clubtraders-bootcamp", // Enlace de invitación al grupo
-  whatsappDirect: "593999421378", // WhatsApp de contacto / soporte
+  whatsappDirect: "593959774039", // WhatsApp oficial de Richard Veintimilla
+  whatsappDisplay: "+593 95 977 4039",
   
   mentor: {
     nombre: "Richard Veintimilla",
