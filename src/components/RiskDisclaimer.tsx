@@ -21,7 +21,7 @@ export default function RiskDisclaimer() {
         </p>
 
         <p>
-          Responsable del evento y formación: <strong>{EVENT_CONFIG.mentor.nombre}</strong> · Contacto oficial: <a href={`mailto:${EVENT_CONFIG.academia.email}`} className="text-[#00e5ff] hover:underline">{EVENT_CONFIG.academia.email}</a>.
+          Responsable del evento y formación: <strong>{EVENT_CONFIG.mentor.nombre}</strong> · Contacto oficial: <a href={`https://wa.me/${EVENT_CONFIG.whatsappDirect}?text=${encodeURIComponent("¡Hola Richard! Me gustaría comunicarme contigo sobre Club de Traders.")}`} target="_blank" rel="noopener noreferrer" className="text-[#00e5ff] hover:underline">WhatsApp ({EVENT_CONFIG.whatsappDisplay})</a>.
         </p>
       </div>
     </section>
