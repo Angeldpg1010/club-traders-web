@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { TrendingUp, TrendingDown, Activity } from "lucide-react";
 
@@ -25,7 +25,7 @@ export default function MarketTicker() {
           </span>
           <span className="font-bold tracking-wider text-[11px] text-emerald-400 uppercase flex items-center gap-1">
             <Activity className="w-3 h-3" />
-            MERCADO EN VIVO
+            DATOS ILUSTRATIVOS
           </span>
         </div>
 

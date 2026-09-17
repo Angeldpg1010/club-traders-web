@@ -1,32 +1,12 @@
-﻿import { XCircle, CheckCircle2, ShieldAlert, Sparkles, Target, Flame, Lock } from "lucide-react";
+import { XCircle, CheckCircle2, ShieldAlert, Sparkles, Target, Flame, Lock } from "lucide-react";
 
 export default function InstitutionalVsRetail() {
   const comparisons = [
-    {
-      criterio: "Análisis del Gráfico",
-      retail: "Satura la pantalla con 5 o 6 indicadores rezagados (RSI, MACD, Medias) que solo le dicen lo que ya pasó.",
-      club: "Gráfico limpio: lee la huella de los grandes bancos, piscinas de liquidez (Stop Hunts) y desbalances de precio (FVG).",
-    },
-    {
-      criterio: "Gestión de Riesgo",
-      retail: "Arriesga el 10% o 20% de su cuenta por trade intentando hacerse millonario en una semana. Quema la cuenta en 3 rachas malas.",
-      club: "Preservación institucional innegociable: arriesga estrictamente el 1% por operación. Cero posibilidad de quebrar.",
-    },
-    {
-      criterio: "Ratio Riesgo / Beneficio",
-      retail: "Cierra en pánico ganando $15, pero cuando va perdiendo $80 no corta esperando un milagro (Asimetría negativa).",
-      club: "Asimetría 1:3: corta pérdidas en segundos si el escenario invalida, y deja correr los beneficios hacia zonas de liquidez.",
-    },
-    {
-      criterio: "Horarios & Sesiones",
-      retail: "Pasa 8 horas pegado a la pantalla operando en momentos de ruido y baja volatilidad por pura ansiedad.",
-      club: "Opera como un francotirador solo en las Killzones de Londres y New York, donde las instituciones inyectan volumen real.",
-    },
-    {
-      criterio: "Modelo de Aprendizaje",
-      retail: "Paga $1,000 por cursos grabados llenos de teoría genérica de YouTube vendidos por personajes sin cuentas auditadas.",
-      club: "Bootcamp 100% gratuito en vivo por Zoom con Richard Veintimilla. Análisis en tiempo real y comunidad activa.",
-    },
+    { criterio: "Análisis del gráfico", retail: "Entrar sin una hipótesis definida ni criterios para revisarla.", club: "Estudiar la estructura del precio y contrastar escenarios. Ningún patrón asegura el movimiento siguiente." },
+    { criterio: "Gestión de riesgo", retail: "Aumentar la exposición para intentar recuperar pérdidas.", club: "Definir límites de exposición y estudiar las pérdidas posibles. Los límites y los stops no eliminan el riesgo de perder capital." },
+    { criterio: "Riesgo y beneficio", retail: "Ignorar los costes, el deslizamiento y las operaciones perdedoras.", club: "Comparar el riesgo y el beneficio potencial de cada escenario. Un ratio teórico no garantiza rentabilidad." },
+    { criterio: "Planificación", retail: "Operar por impulso, sin reglas para entrar, salir o dejar de operar.", club: "Preparar un plan y revisar las decisiones con una bitácora, empezando por ejercicios de práctica." },
+    { criterio: "Aprendizaje", retail: "Buscar señales infalibles o beneficios rápidos.", club: "Clases educativas en directo con Richard Veintimilla. La formación no garantiza resultados ni sustituye asesoramiento individual." },
   ];
 
   return (
@@ -37,16 +17,16 @@ export default function InstitutionalVsRetail() {
         <div className="text-center max-w-3xl mx-auto mb-14">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-rose-500/10 border border-rose-500/30 text-rose-400 text-xs font-bold uppercase tracking-wider mb-4">
             <ShieldAlert className="w-4 h-4" />
-            <span>El Choque de Realidad Financiera</span>
+            <span>Método y riesgo</span>
           </div>
           <h2 className="text-2xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-tight mb-4">
-            ¿Por qué el 95% de los Novatos pierde dinero en Trading y{" "}
+            Aprender a analizar el mercado y{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00e5ff] to-emerald-400">
-              cómo se posiciona el 5% de Élite?
+              comprender sus riesgos
             </span>
           </h2>
           <p className="text-slate-300 text-sm sm:text-base leading-relaxed max-w-2xl mx-auto">
-            El mercado no es una casa de apuestas ni un casino de criptos. Es una subasta interbancaria implacable. Compara los dos caminos:
+            Comparamos hábitos de trabajo, no resultados prometidos. Puedes perder parte o la totalidad del capital, incluso siguiendo un método.
           </p>
         </div>
 
@@ -63,9 +43,9 @@ export default function InstitutionalVsRetail() {
                   <Flame className="w-5 h-5" />
                 </div>
                 <div>
-                  <h3 className="text-lg font-black text-white">El Trader Retail Promedio</h3>
+                  <h3 className="text-lg font-black text-white">Operar sin un plan</h3>
                   <span className="text-xs font-bold text-rose-400 uppercase tracking-wider">
-                    El 95% que pierde capital
+                    Hábitos que dificultan el aprendizaje
                   </span>
                 </div>
               </div>
@@ -85,7 +65,7 @@ export default function InstitutionalVsRetail() {
 
             <div className="mt-8 pt-4 border-t border-rose-500/20 text-center">
               <span className="text-xs font-mono font-bold text-rose-300">
-                ⚠️ Resultado: Frustración, cuentas quemadas y meses perdidos.
+                Identificar estos hábitos ayuda a revisar tus decisiones.
               </span>
             </div>
           </div>
@@ -101,14 +81,14 @@ export default function InstitutionalVsRetail() {
                     <Target className="w-5 h-5" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-black text-white">El Trader ClubTraders</h3>
+                    <h3 className="text-lg font-black text-white">Practicar con un método</h3>
                     <span className="text-xs font-bold text-[#00e5ff] uppercase tracking-wider">
-                      El 5% con Método y Disciplina
+                      El enfoque del Bootcamp
                     </span>
                   </div>
                 </div>
                 <span className="hidden sm:inline-block px-2.5 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-[11px] font-mono font-bold">
-                  Rentabilidad Asimétrica
+                  Formación educativa
                 </span>
               </div>
 
@@ -127,7 +107,7 @@ export default function InstitutionalVsRetail() {
 
             <div className="mt-8 pt-4 border-t border-cyan-500/20 text-center">
               <span className="text-xs font-mono font-bold text-[#00e5ff]">
-                🚀 Resultado: Consistencia matemática, paz mental y retiros sostenibles.
+                Disciplina y formación no garantizan beneficios.
               </span>
             </div>
           </div>

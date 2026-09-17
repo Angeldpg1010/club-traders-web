@@ -16,9 +16,9 @@ export const EVENT_CONFIG = {
   mentor: {
     nombre: "Richard Veintimilla",
     cargo: "Trader Profesional & Fundador de Club de Traders",
-    experiencia: "+7 años de experiencia en mercado real",
-    alumnos: "+500 alumnos formados",
-    filosofia: "El trading real se basa en lectura institucional de liquidez, estrategia probada y disciplina matemática. Cero fórmulas mágicas.",
+    experiencia: "Formación en directo",
+    alumnos: "Ejercicios prácticos",
+    filosofia: "El trading real se basa en lectura institucional de liquidez, planificación y disciplina matemática. Cero fórmulas mágicas.",
     foto: "/richard-veintimilla-live.png",
     flyerHorario: "/richard-gotrader-schedule.png",
   },
@@ -49,7 +49,7 @@ export const EVENT_CONFIG = {
       dia: "DÍA 2",
       fase: "CONSTRUYE TU MÉTODO",
       titulo: "Estrategia Operativa & Gestión Matemática de Riesgo",
-      desc: "Zonas de alta probabilidad, puntos de entrada con ratio riesgo/beneficio favorable y las reglas inquebrantables de preservación de capital para no quemar cuentas.",
+      desc: "Análisis de escenarios, relación entre riesgo y beneficio potencial, costes y límites de exposición. La gestión de riesgo no evita todas las pérdidas.",
       entregable: "Plantilla de Plan de Trading (PDF)"
     },
     {

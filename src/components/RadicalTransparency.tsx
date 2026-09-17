@@ -39,40 +39,30 @@ export default function RadicalTransparency() {
                 <span>Transparencia Radical & Cero Humo</span>
               </div>
 
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white leading-tight">
-                "¿Por qué hago este Bootcamp 100% GRATIS y{" "}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00e5ff] to-emerald-400">
-                  no te vendo un curso de $1,000?"
-                </span>
-              </h2>
-
-              <div className="space-y-3.5 text-slate-300 text-xs sm:text-sm leading-relaxed">
-                <p>
-                  "Llevo más de 7 años en los mercados financieros. Estoy profundamente cansado de ver a personas perdiendo sus ahorros comprando cursos pregrabados de $997 vendidos por supuestos 'mentores' que nunca han puesto una orden en una cuenta real.
-                </p>
-                <p>
-                  En <strong className="text-white">Club de Traders</strong> no vivimos de vender cursos enlatados de Hotmart. Mi objetivo con este Bootcamp es identificar a traders con disciplina real que quieran formar parte de nuestra comunidad a largo plazo.
-                </p>
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white leading-tight">Qué incluye el Bootcamp gratuito</h2>
+              <div className="space-y-3.5 text-slate-300 text-sm leading-relaxed">
+                <p>Tres clases educativas por Zoom con Richard Veintimilla para conocer el enfoque de Club de Traders y practicar el análisis de mercados.</p>
+                <p>El Bootcamp no promete ingresos, rentabilidad ni recuperación de pérdidas. Cualquier decisión de inversión requiere una evaluación independiente de sus riesgos.</p>
               </div>
 
               {/* The Win-Win Model */}
               <div className="p-4 rounded-2xl bg-slate-900/90 border border-slate-800 space-y-3">
                 <strong className="text-xs uppercase tracking-wider text-[#00e5ff] block">
-                  Así Funciona Nuestro Modelo Ganar-Ganar:
+                  Contenido y continuidad:
                 </strong>
 
                 <div className="space-y-2 text-xs text-slate-200">
                   <div className="flex items-start gap-2.5">
                     <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
-                    <span><strong>1. Bootcamp 100% Gratis:</strong> 3 días intensivos de Zoom con toda mi metodología y gestión matemática.</span>
+                    <span><strong>1. Bootcamp 100% Gratis:</strong> Tres clases en directo y materiales de apoyo en PDF.</span>
                   </div>
                   <div className="flex items-start gap-2.5">
                     <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
-                    <span><strong>2. Cero Venta de Cursos:</strong> No te pediré tu tarjeta de crédito ni te cobraré membresías escondidas.</span>
+                    <span><strong>2. Cero Venta de Cursos:</strong> El registro en estas tres clases no solicita tarjeta ni realiza cobros.</span>
                   </div>
                   <div className="flex items-start gap-2.5">
                     <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
-                    <span><strong>3. Comunidad VIP en Broker XM:</strong> En el Día 3 te enseñaré cómo operar semanalmente conmigo con condiciones institucionales y participar por los sorteos de $100 para alumnos disciplinados.</span>
+                    <span><strong>3. Comunidad VIP en Broker XM:</strong> En la última clase se presenta la comunidad. Solicita sus condiciones antes de decidir participar; registrarte al Bootcamp no abre una cuenta en un broker.</span>
                   </div>
                 </div>
               </div>
@@ -87,7 +77,7 @@ export default function RadicalTransparency() {
                   <ArrowRight className="w-4 h-4" />
                 </Link>
                 <span className="block text-[11px] text-slate-400 mt-2">
-                  🔒 Cero spam. Tu número solo se usará para enviarte los links de Zoom y los PDFs del curso.
+                  Consulta el uso de tus datos y las autorizaciones en el formulario de registro.
                 </span>
               </div>
 

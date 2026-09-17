@@ -48,7 +48,7 @@ export default function HeroVideo() {
             </div>
             <div className="flex items-center gap-2">
               <Users className="w-4 h-4 text-emerald-400" />
-              <span>+500 Alumnos Formados</span>
+              <span>Formación en directo</span>
             </div>
             <div className="flex items-center gap-2">
               <CheckCircle2 className="w-4 h-4 text-[#00e5ff]" />

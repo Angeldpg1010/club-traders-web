@@ -20,7 +20,8 @@ export default function Footer() {
           </span>
         </div>
 
-        <div className="flex items-center gap-6">
+        <div className="flex flex-wrap items-center justify-center gap-6">
+          <Link href="/privacidad" className="hover:text-cyan-300 underline">Privacidad y datos personales</Link>
           <a
             href={`https://wa.me/${EVENT_CONFIG.whatsappDirect}?text=${encodeURIComponent("¡Hola Richard! Me gustaría comunicarme contigo sobre Club de Traders.")}`}
             target="_blank"

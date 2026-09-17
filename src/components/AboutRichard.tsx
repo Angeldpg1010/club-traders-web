@@ -32,17 +32,17 @@ export default function AboutRichard() {
           </p>
 
           <p className="text-sm sm:text-base text-slate-300 leading-relaxed mb-6">
-            Con más de <strong className="text-white">7 años de experiencia operando en los mercados financieros</strong> y más de 500 alumnos capacitados, Richard se enfoca en enseñar la realidad cruda y técnica del trading: cómo reacciona el precio en mercado real, cómo gestionar el riesgo y cómo eliminar el ruido de indicadores obsoletos.
+            Richard imparte las sesiones del Bootcamp sobre estructura del precio, planificación y gestión del riesgo. Los ejemplos se utilizan con fines educativos y no acreditan resultados futuros.
           </p>
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
             <div className="bg-[#0e1628] border border-slate-800 rounded-2xl p-4 text-center">
-              <strong className="block text-2xl font-black text-[#00e5ff]">+7 Años</strong>
-              <span className="text-[11px] text-slate-400">Operando en Real</span>
+              <strong className="block text-2xl font-black text-[#00e5ff]">En vivo</strong>
+              <span className="text-[11px] text-slate-400">Clases por Zoom</span>
             </div>
             <div className="bg-[#0e1628] border border-slate-800 rounded-2xl p-4 text-center">
-              <strong className="block text-2xl font-black text-emerald-400">+500</strong>
-              <span className="text-[11px] text-slate-400">Alumnos Formados</span>
+              <strong className="block text-2xl font-black text-emerald-400">Práctica</strong>
+              <span className="text-[11px] text-slate-400">Análisis y bitácora</span>
             </div>
             <div className="bg-[#0e1628] border border-slate-800 rounded-2xl p-4 text-center">
               <strong className="block text-2xl font-black text-white">Gold & FX</strong>
