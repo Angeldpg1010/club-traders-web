@@ -54,9 +54,51 @@ export function attribution(value: unknown): Record<string, string> {
 export async function scriptRequest(body: Record<string, unknown>) {
   const url = process.env.REGISTRATION_SCRIPT_URL;
   if (!url || !secret() || !/^https:\/\/script\.google\.com\/macros\/s\/[A-Za-z0-9_-]+\/exec$/.test(url)) throw new Error("configuration");
-  const response = await fetch(url, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ ...body, secret: secret() }), cache: "no-store", signal: AbortSignal.timeout(60000) });
-  if (!response.ok) throw new Error("upstream_http");
-  return response.json();
+  // Apps Script returns JSON via a separate googleusercontent URL.
+  // Retry only that read: never repeat the POST or expose its secret in a URL.
+  const started = Date.now();
+  let phase = "submit";
+  try {
+    let response = await fetch(url, {
+      method: "POST", headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ ...body, secret: secret() }), cache: "no-store",
+      redirect: "manual", signal: AbortSignal.timeout(30000),
+    });
+    const submittedMs = Date.now() - started;
+    if ([301, 302, 303].includes(response.status)) {
+      const location = response.headers.get("location");
+      const target = location ? new URL(location, url) : null;
+      if (!target || target.origin !== "https://script.googleusercontent.com" || target.username || target.password) {
+        throw new Error("unexpected_redirect");
+      }
+      await response.body?.cancel();
+      phase = "confirmation";
+      for (let attempt = 1; attempt <= 3; attempt++) {
+        try {
+          response = await fetch(target.href, {
+            method: "GET", cache: "no-store", redirect: "error",
+            signal: AbortSignal.timeout(8000),
+          });
+          if (!response.ok) {
+            await response.body?.cancel();
+            if (response.status !== 429 && response.status < 500) throw new Error("confirmation_rejected");
+            throw new Error("confirmation_unavailable");
+          }
+          const result = await response.json();
+          console.info(JSON.stringify({ event: "registration_transport", submittedMs, confirmationMs: Date.now() - started - submittedMs, attempt, outcome: "response_received" }));
+          return result;
+        } catch (error) {
+          if (attempt === 3 || (error instanceof Error && (error.message === "confirmation_rejected" || error.name === "SyntaxError"))) throw error;
+        }
+      }
+    }
+    if (!response.ok) throw new Error("upstream_http");
+    return await response.json();
+  } catch (error) {
+    // Deliberately exclude URLs, response bodies, exception messages and submitted data.
+    console.warn(JSON.stringify({ event: "registration_transport", phase, durationMs: Date.now() - started, outcome: error instanceof Error && error.name === "TimeoutError" ? "timeout" : "failed" }));
+    throw error;
+  }
 }
 export function report(event: string, requestId: string, started: number, outcome: string) {
   const entry = JSON.stringify({ event, requestId, durationMs: Date.now() - started, outcome });
