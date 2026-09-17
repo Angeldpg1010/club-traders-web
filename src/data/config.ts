@@ -27,7 +27,7 @@ export const EVENT_CONFIG = {
     nombre: "Club de Traders",
     lema: "Traders en Evolución",
     logo: "/clubtraders-logo.png",
-    email: "Clubtraders@outlook.com",
+    email: "Clubtradersgo@gmail.com",
     webOficial: "https://www.clubtraderec.com",
   },
   
