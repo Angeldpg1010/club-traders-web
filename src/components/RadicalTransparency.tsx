@@ -15,9 +15,10 @@ export default function RadicalTransparency() {
             <div className="lg:col-span-5 relative">
               <div className="relative rounded-2xl overflow-hidden border-2 border-cyan-500/30 aspect-[4/5] shadow-xl shadow-[#00e5ff]/10 group">
                 <Image
-                  src="/richard-standing-car.jpg"
+                  src="/richard-profesional-beige.webp"
                   alt="Richard Veintimilla - Founder Club de Traders"
                   fill
+                  sizes="(min-width: 1024px) 380px, (min-width: 768px) 800px, calc(100vw - 80px)"
                   className="object-cover object-top group-hover:scale-105 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent" />
