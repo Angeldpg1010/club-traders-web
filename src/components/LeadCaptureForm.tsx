@@ -5,7 +5,7 @@ import { ArrowRight, MessageCircle, CheckCircle2 } from "lucide-react";
 import { EVENT_CONFIG } from "@/data/config";
 
 export default function LeadCaptureForm() {
-  const [details, setDetails] = useState<{ name: string; email: string } | null>(null);
+  const [details, setDetails] = useState<{ name: string; email: string; phone: string } | null>(null);
   const nextStep = useRef<HTMLHeadingElement>(null);
 
   useEffect(() => {
@@ -17,16 +17,20 @@ export default function LeadCaptureForm() {
     const form = event.currentTarget;
     const nameInput = form.elements.namedItem("name") as HTMLInputElement;
     nameInput.setCustomValidity(nameInput.value.trim() ? "" : "Escribe tu nombre.");
+    const phoneInput = form.elements.namedItem("phone") as HTMLInputElement;
+    const phone = phoneInput.value.trim().replace(/[\s().-]/g, "");
+    phoneInput.setCustomValidity(/^\+[1-9]\d{7,14}$/.test(phone) ? "" : "Incluye el prefijo del país, por ejemplo +593 99 123 4567.");
     if (!form.reportValidity()) return;
     const data = new FormData(form);
     setDetails({
       name: String(data.get("name")).trim(),
       email: String(data.get("email")).trim(),
+      phone,
     });
   }
 
   const message = details
-    ? `¡Hola Richard! Quiero inscribirme sin costo al Bootcamp del Club.\nNombre: ${details.name}\nCorreo: ${details.email}\n¿Puedes confirmar mi inscripción y enviarme el acceso al grupo de WhatsApp y a las clases por Zoom?`
+    ? `¡Hola Richard! Quiero inscribirme sin costo al Bootcamp del Club.\nNombre: ${details.name}\nCorreo: ${details.email}\nTeléfono: ${details.phone}\n¿Puedes confirmar mi inscripción y enviarme el acceso al grupo de WhatsApp y a las clases por Zoom?`
     : "";
   const whatsappUrl = `https://wa.me/${EVENT_CONFIG.whatsappDirect}?text=${encodeURIComponent(message)}`;
   const inputClass = "mt-2 w-full rounded-xl border border-slate-600 bg-white/5 px-4 py-4 text-base text-white placeholder:text-slate-500 focus:border-[#00e5ff] focus:outline-none focus:ring-2 focus:ring-[#00e5ff]/30";
@@ -55,6 +59,12 @@ export default function LeadCaptureForm() {
               <div>
                 <label htmlFor="registration-email" className="font-semibold text-slate-200">Correo electrónico</label>
                 <input id="registration-email" name="email" type="email" autoComplete="email" placeholder="tucorreo@ejemplo.com" required maxLength={254} className={inputClass} />
+              </div>
+              <div>
+                <label htmlFor="registration-phone" className="font-semibold text-slate-200">Teléfono (WhatsApp)</label>
+                <input id="registration-phone" name="phone" type="tel" inputMode="tel" autoComplete="tel" placeholder="+593 99 123 4567" required maxLength={30} aria-describedby="phone-help" className={inputClass}
+                  onInput={(event) => event.currentTarget.setCustomValidity("")} />
+                <p id="phone-help" className="mt-2 text-xs text-slate-400">Incluye el prefijo de tu país: +593 Ecuador, +34 España, etc.</p>
               </div>
               <p id="registration-note" className="text-xs text-slate-400 leading-relaxed">
                 Tus datos se incluirán en el mensaje de WhatsApp. Solo se enviarán a Richard cuando tú pulses enviar en el chat.
