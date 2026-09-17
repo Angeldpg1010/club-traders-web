@@ -9,7 +9,7 @@ export const EVENT_CONFIG = {
   duracion: "3 Clases en Vivo",
   
   // Enlaces de conversión
-  whatsappGroupUrl: "https://chat.whatsapp.com/invite/clubtraders-bootcamp", // Enlace de invitación al grupo
+  whatsappGroupUrl: "https://chat.whatsapp.com/Lw0qXjTS5rd6lupNnX8JLZ?s=cl&p=a&mlu=4&ilr=4", // Enlace de invitación al grupo
   whatsappDirect: "593959774039", // WhatsApp oficial de Richard Veintimilla
   whatsappDisplay: "+593 95 977 4039",
   
@@ -86,7 +86,7 @@ export const EVENT_CONFIG = {
     },
     {
       q: "¿Dónde se enviarán los enlaces de Zoom?",
-      a: "Completa el formulario debajo del vídeo y pulsa el botón de WhatsApp que aparecerá después. Envía el mensaje a Richard para confirmar tu inscripción y solicitar el acceso al grupo donde se compartirán los enlaces de Zoom."
+      a: "Completa el formulario debajo del vídeo. Cuando tu registro esté guardado, pulsa «Unirme al grupo de WhatsApp» y sigue las indicaciones de WhatsApp para entrar al grupo donde se compartirán los enlaces de Zoom."
     },
     {
       q: "¿Necesito experiencia previa para asistir?",

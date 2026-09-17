@@ -88,10 +88,7 @@ export default function LeadCaptureForm() {
     }
   }
 
-  const message = details
-    ? `¡Hola Richard! Quiero inscribirme sin costo al Bootcamp del Club.\nNombre: ${details.name}\nYa completé mi registro en la web. ¿Puedes enviarme el acceso al grupo de WhatsApp y a las clases por Zoom?`
-    : "";
-  const whatsappUrl = `https://wa.me/${EVENT_CONFIG.whatsappDirect}?text=${encodeURIComponent(message)}`;
+  const whatsappUrl = EVENT_CONFIG.whatsappGroupUrl;
   const inputClass = "mt-2 w-full rounded-xl border border-slate-600 bg-white/5 px-4 py-4 text-base text-white placeholder:text-slate-500 focus:border-[#00e5ff] focus:outline-none focus:ring-2 focus:ring-[#00e5ff]/30";
 
   return (
@@ -146,15 +143,15 @@ export default function LeadCaptureForm() {
               {details.name.split(" ")[0]}, ¡tu registro está guardado!
             </h2>
             <p className="mt-4 text-slate-300 leading-relaxed">
-              Continúa a WhatsApp y envía el mensaje a Richard para pedir acceso al grupo. Allí recibirás los enlaces de las clases en vivo y los materiales del Bootcamp.
+              Únete al grupo de WhatsApp para recibir los enlaces de las clases en vivo y los materiales del Bootcamp.
             </p>
             <a onClick={trackWhatsApp} href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="mt-7 w-full inline-flex items-center justify-center gap-3 rounded-xl bg-[#25d366] hover:bg-[#20ba5a] px-5 py-4 text-base sm:text-lg font-bold text-[#062512] transition-colors focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-emerald-400">
               <MessageCircle className="w-6 h-6 shrink-0" aria-hidden="true" />
-              Continuar a WhatsApp
+              Unirme al grupo de WhatsApp
               <ArrowRight className="w-5 h-5 shrink-0" aria-hidden="true" />
             </a>
             {trackingWarning && <p role="status" className="mt-3 text-xs text-slate-400">Tu inscripción está guardada. No pudimos registrar la estadística del clic; puedes continuar a WhatsApp con normalidad.</p>}
-            <p className="mt-4 text-xs text-slate-400">Se abrirá el chat de {EVENT_CONFIG.mentor.nombre} ({EVENT_CONFIG.whatsappDisplay}). Recuerda enviar el mensaje.</p>
+            <p className="mt-4 text-xs text-slate-400">Se abrirá la invitación al grupo. Sigue las indicaciones de WhatsApp para unirte.</p>
           </div>
         )}
       </div>
