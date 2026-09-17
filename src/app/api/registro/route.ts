@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 
 export const runtime = "nodejs";
+export const maxDuration = 65;
 
 export async function POST(request: Request) {
   const fail = (message: string, status = 400) => NextResponse.json({ ok: false, message }, { status });
@@ -28,7 +29,7 @@ export async function POST(request: Request) {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ name, email, phone, consent: true, secret }),
       cache: "no-store",
-      signal: AbortSignal.timeout(20000),
+      signal: AbortSignal.timeout(60000),
     });
     if (!response.ok || (await response.json()).ok !== true) {
       return fail("No pudimos guardar tu registro. Vuelve a intentarlo.", 502);

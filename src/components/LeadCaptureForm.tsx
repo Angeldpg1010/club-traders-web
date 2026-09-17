@@ -39,7 +39,7 @@ export default function LeadCaptureForm() {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ ...registration, consent: data.get("consent") === "on", website: data.get("website") || "" }),
-        signal: AbortSignal.timeout(25000),
+        signal: AbortSignal.timeout(70000),
       });
       const result = await response.json();
       if (!response.ok || result.ok !== true) throw new Error(result.message || "No pudimos guardar tu registro. Inténtalo de nuevo.");
