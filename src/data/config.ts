@@ -50,7 +50,7 @@ export const EVENT_CONFIG = {
       fase: "CONSTRUYE TU MÉTODO",
       titulo: "Estrategia Operativa & Gestión Matemática de Riesgo",
       desc: "Zonas de alta probabilidad, puntos de entrada con ratio riesgo/beneficio favorable y las reglas inquebrantables de preservación de capital para no quemar cuentas.",
-      entregable: "Plantilla de Plan de Trading & Calculadora de Lotaje (PDF)"
+      entregable: "Plantilla de Plan de Trading (PDF)"
     },
     {
       dia: "DÍA 3",
