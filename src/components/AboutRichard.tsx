@@ -6,14 +6,15 @@ export default function AboutRichard() {
   return (
     <section id="mentor" className="py-16 md:py-24 bg-[#0a0f1d] border-t border-slate-800/80">
       <div className="w-[min(1200px,calc(100%-32px))] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
-        {/* Visual Poster */}
+        {/* Foto del mentor */}
         <div className="lg:col-span-5 relative max-w-md mx-auto lg:max-w-none w-full">
           <div className="relative rounded-3xl overflow-hidden border border-[#00e5ff]/30 shadow-2xl bg-black aspect-[4/5]">
             <Image
-              src="/richard-gotrader-schedule.png"
+              src="/richard-profesional.webp"
               alt="Profesor Richard Veintimilla"
               fill
-              className="object-cover object-center"
+              sizes="(min-width: 1024px) 480px, (min-width: 480px) 448px, calc(100vw - 32px)"
+              className="object-cover object-top"
             />
           </div>
         </div>
