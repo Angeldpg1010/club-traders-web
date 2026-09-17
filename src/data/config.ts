@@ -86,7 +86,7 @@ export const EVENT_CONFIG = {
     },
     {
       q: "¿Dónde se enviarán los enlaces de Zoom?",
-      a: "Exclusivamente en el Grupo Oficial de WhatsApp. Una vez que completes tu registro, serás redirigido directamente para unirte al grupo."
+      a: "Completa el formulario debajo del vídeo y pulsa el botón de WhatsApp que aparecerá después. Envía el mensaje a Richard para confirmar tu inscripción y solicitar el acceso al grupo donde se compartirán los enlaces de Zoom."
     },
     {
       q: "¿Necesito experiencia previa para asistir?",

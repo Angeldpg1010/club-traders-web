@@ -9,7 +9,6 @@ import SetupBreakdown from "@/components/SetupBreakdown";
 import AudienceTarget from "@/components/AudienceTarget";
 import AboutRichard from "@/components/AboutRichard";
 import RadicalTransparency from "@/components/RadicalTransparency";
-import LeadCaptureForm from "@/components/LeadCaptureForm";
 import Faq from "@/components/Faq";
 import RiskDisclaimer from "@/components/RiskDisclaimer";
 import Footer from "@/components/Footer";
@@ -50,9 +49,6 @@ export default function HomePage() {
 
       {/* 11. Radical transparency: why it's 100% free */}
       <RadicalTransparency />
-
-      {/* 12. Lead capture form + WhatsApp redirect */}
-      <LeadCaptureForm />
 
       {/* 13. Frequently asked questions */}
       <Faq />
