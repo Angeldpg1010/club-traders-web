@@ -2,9 +2,8 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import Link from "next/link";
-import { Play, CheckCircle2, Users, Calendar, ShieldCheck, ArrowRight } from "lucide-react";
-import { EVENT_CONFIG } from "@/data/config";
+import LeadCaptureForm from "./LeadCaptureForm";
+import { Play, CheckCircle2, Users, Calendar, ShieldCheck } from "lucide-react";
 
 export default function HeroVideo() {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -122,19 +121,7 @@ export default function HeroVideo() {
           </div>
         </div>
 
-        {/* Primary Hero CTA */}
-        <div className="text-center">
-          <Link
-            href="#registro"
-            className="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full text-base sm:text-lg font-black bg-gradient-to-r from-[#00e5ff] via-cyan-400 to-emerald-400 text-black hover:brightness-110 shadow-xl shadow-cyan-500/25 active:scale-95 transition-all"
-          >
-            <span>RESERVAR MI CUPO GRATIS EN WHATSAPP</span>
-            <ArrowRight className="w-5 h-5" />
-          </Link>
-          <p className="text-xs text-slate-400 mt-3">
-            Acceso libre · 100% Gratuito · Enlace de Zoom directo en el grupo
-          </p>
-        </div>
+        <LeadCaptureForm />
       </div>
     </section>
   );

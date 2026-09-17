@@ -1,9 +1,9 @@
-﻿"use client";
+"use client";
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { MessageCircle, Zap, X, ChevronRight } from "lucide-react";
+import { Zap, X, ChevronRight } from "lucide-react";
 import { EVENT_CONFIG } from "@/data/config";
 
 export default function StickyMobileCta() {
@@ -27,7 +27,7 @@ export default function StickyMobileCta() {
   if (!isVisible || isDismissed) return null;
 
   return (
-    <aside aria-label="Acceso rápido WhatsApp" className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 max-w-[360px] w-[calc(100%-32px)]">
+    <aside aria-label="Registro al Bootcamp" className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 max-w-[360px] w-[calc(100%-32px)]">
       <div className="relative rounded-2xl bg-slate-950/95 border-2 border-cyan-400/60 p-3.5 shadow-2xl shadow-cyan-950/80 backdrop-blur-xl animate-in fade-in slide-in-from-bottom-5 duration-300">
         
         {/* Dismiss Button */}
@@ -78,7 +78,7 @@ export default function StickyMobileCta() {
             className="w-full inline-flex items-center justify-center gap-2 py-2 px-3 rounded-xl bg-[#00e5ff] hover:bg-cyan-300 text-black text-xs font-black tracking-wide shadow-md shadow-[#00e5ff]/20 transition-all active:scale-95"
           >
             <Zap className="w-3.5 h-3.5 fill-current" />
-            <span>Unirme al Grupo VIP de WhatsApp</span>
+            <span>Registrarme sin costo</span>
             <ChevronRight className="w-3.5 h-3.5" />
           </Link>
         </div>
