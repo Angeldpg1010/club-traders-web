@@ -15,7 +15,7 @@ const TICKER_ITEMS = [
 
 export default function MarketTicker() {
   return (
-    <aside aria-label="Cotizaciones en vivo" className="w-full bg-[#05080f] border-b border-slate-800/80 overflow-hidden py-2 text-xs font-mono select-none">
+    <aside aria-label="Ejemplos ilustrativos de mercados" className="w-full bg-[#05080f] border-b border-slate-800/80 overflow-hidden py-2 text-xs font-mono select-none">
       <div className="flex items-center">
         {/* Live status badge on the left */}
         <div className="hidden md:flex items-center gap-2 pl-4 pr-3 py-0.5 bg-slate-900/90 border-r border-slate-800 text-slate-300 shrink-0 z-10">

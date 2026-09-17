@@ -19,7 +19,8 @@ export async function POST(request: Request) {
     if (Number(request.headers.get("content-length")) > 4096) return fail("Solicitud demasiado grande.", 413);
     const raw = await request.text();
     if (raw.length > 4096) return fail("Solicitud demasiado grande.", 413);
-    const data = JSON.parse(raw);
+    let data;
+    try { data = JSON.parse(raw); } catch { return fail("Solicitud no válida."); }
     if (!data || typeof data !== "object" || data.website || !verify(data.formToken, "form", 2000)) return fail("La sesión del formulario ha caducado o no es válida. Recarga la página y vuelve a intentarlo.");
     const name = typeof data.name === "string" ? data.name.trim() : "";
     const email = typeof data.email === "string" ? data.email.trim().toLowerCase() : "";
@@ -28,7 +29,7 @@ export async function POST(request: Request) {
     const id = randomUUID();
     const measurement = data.measurement === true;
     const result = await scriptRequest({ action: "register", name, email, phone, consent: true, policyVersion: "2026-09-17", measurement, attribution: measurement ? attribution(data.attribution) : {}, id, clientKey: key });
-    if (result.code === "rate_limited") return fail("Has realizado varios intentos. Espera 10 minutos antes de volver a intentarlo.", 429);
+    if (result.code === "rate_limited") { report("registration", requestId, started, "rate_limited"); return fail("Has realizado varios intentos. Espera 10 minutos antes de volver a intentarlo.", 429); }
     if (result.ok !== true) throw new Error("upstream_rejected");
     report("registration", requestId, started, result.duplicate ? "duplicate" : "saved");
     // Never expose the ID/receipt of an existing email to another visitor.
