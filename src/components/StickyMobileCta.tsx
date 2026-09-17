@@ -58,11 +58,6 @@ export default function StickyMobileCta() {
 
           {/* Texts & Button */}
           <div className="flex-1 min-w-0">
-            <div className="flex items-center gap-1.5 mb-0.5">
-              <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-rose-400 bg-rose-500/10 px-1.5 py-0.5 rounded border border-rose-500/20">
-                Solo 18 cupos libres
-              </span>
-            </div>
             <strong className="block text-xs font-bold text-white truncate">
               {EVENT_CONFIG.nombreEvento} · Zoom
             </strong>
